@@ -3,6 +3,14 @@
 ## 1. Introduction
  This application allows library staff to manage book inventory, member registrations, and loan lifecycles through a command-line interface or a basic GUI.
 
+ ![alt text](Images/render1767303052022.gif)
+
+ ![alt text](Images/dashboard.png)
+ ![alt text](Images/books_page.png)
+ ![alt text](Images/members_page.png) 
+ ![alt text](Images/loans_page.png)
+
+
 ## 2. Installation & Setup
 ### Prerequisites
 - Ubuntu 24.04+
