@@ -1,0 +1,7 @@
+mysql-connector-python
+reportlab
+pytest
+pytest-cov
+python-dotenv
+tabulate
+PySide6

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.coverage
+htmlcov/
+.pytest_cache/
+.env
+tests/
+*.spec
+.venv/
+build.sh
+build.bat
