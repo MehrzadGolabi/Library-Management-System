@@ -55,5 +55,8 @@ python3 gui_main.py
 - Fines: Fines are calculated at a rate of $1.00 per day for overdue books.
 - No Renewals: To extend a loan, the book must be returned and a new loan issued.
 
-## 6. Troubleshooting
+## 6. Database structure
+![alt text](Images/database.png)
+
+## 7. Troubleshooting
 Check `library_system.log` for detailed error traces if an operation fails unexpectedly.
