@@ -64,3 +64,18 @@ QHeaderView::section {
     border: 1px solid #cccccc;
     font-weight: bold;
 }
+
+/* Toolbar */
+QToolBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    spacing: 5px;
+    padding: 2px;
+}
+
+QSpinBox, QComboBox {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+}

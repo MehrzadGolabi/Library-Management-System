@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import (QWidget, QVBoxLayout, QPushButton, QLabel, 
                              QMessageBox, QGroupBox)
 from reports.pdf_generator import PDFGenerator
+from gui.pdf_viewer import PDFViewerWindow
 import os
 
 class ReportView(QWidget):
@@ -8,6 +9,7 @@ class ReportView(QWidget):
         super().__init__()
         self.layout = QVBoxLayout(self)
         self.pdf_gen = PDFGenerator()
+        self.viewers = []  # Keep references to prevent garbage collection
 
         self.layout.addWidget(QLabel("<h2>Generate Reports</h2>"))
 
@@ -46,7 +48,13 @@ class ReportView(QWidget):
             elif report_type == "members":
                 filename = self.pdf_gen.generate_member_report()
             
-            QMessageBox.information(self, "Success", 
-                                  f"Report generated successfully:\n{os.path.abspath(filename)}")
+            # Show the PDF Viewer automatically
+            viewer = PDFViewerWindow(self)
+            viewer.open_pdf(filename)
+            viewer.show()
+            self.viewers.append(viewer)
+            # Cleanup closed viewers
+            self.viewers = [v for v in self.viewers if v.isVisible() or v.isEnabled()]
+            
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to generate report: {e}")
